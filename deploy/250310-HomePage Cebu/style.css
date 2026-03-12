@@ -1,0 +1,445 @@
+/* 
+  'SEOUL MEETS CEBU' - Inspired by "VISIT TOKYO" travel theme
+  High-contrast, Cinematic, Dark Charcoal & Orange
+*/
+
+:root {
+  /* Colors from example */
+  --color-bg: #121417;
+  --color-bg-light: #1a1d22;
+  --color-accent: #ff4d00; /* Vivid Orange */
+  --color-accent-sub: #ff7043;
+  --color-text-main: #ffffff;
+  --color-text-dim: #999999;
+  --color-line: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+/* Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Nav */
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2.5rem 0;
+  z-index: 100;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('hero_new.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 8rem;
+  line-height: 0.85;
+  margin-bottom: 2rem;
+  font-weight: 900;
+}
+
+.hero p {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  max-width: 350px;
+  margin-bottom: 2rem;
+}
+
+.vertical-indicators {
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+  font-family: var(--font-display);
+}
+
+.vertical-indicators span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+  font-weight: 700;
+}
+
+.vertical-indicators span.active {
+  color: #fff;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.vertical-indicators span.active::after {
+  content: '';
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  width: 1.5rem;
+  height: 2px;
+  background: #fff;
+}
+
+.hero-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid var(--color-line);
+}
+
+.hero-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero-footer-item {
+  padding: 3rem 4rem;
+  border-right: 1px solid var(--color-line);
+  transition: 0.4s;
+}
+
+.hero-footer-item:last-child {
+  border-right: none;
+}
+
+.hero-footer-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-footer-item h4 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-footer-item p {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.more-btn {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.more-btn::after {
+  content: '→';
+  color: var(--color-accent);
+}
+
+/* Section Header */
+.section-intro {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-intro p {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-bottom: 1rem;
+}
+
+.section-intro h2 {
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+/* Programs (Popular Tours style) */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.program-card {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.program-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s;
+  opacity: 0.7;
+}
+
+.program-card:hover img {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.program-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.program-overlay .num {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.program-overlay h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.program-overlay p {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Secondary Hero (Inspire) */
+.inspire-section {
+  padding: 15rem 0;
+  margin-top: 10rem;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('inspire_bg.jpg') no-repeat center center/cover;
+}
+
+.inspire-content {
+  max-width: 600px;
+}
+
+.inspire-content h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.play-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.play-icon {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+}
+
+/* Bottom Gallery */
+.bottom-gallery {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: -100px;
+}
+
+.bottom-gallery-item {
+  flex: 1;
+  aspect-ratio: 16/9;
+  background: var(--color-bg-light);
+  overflow: hidden;
+}
+
+.bottom-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+/* Footer */
+footer {
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--color-line);
+  margin-top: 5rem;
+}
+
+.footer-logo {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive Design & Media Queries
+   ========================================================================== */
+
+/* Large screens & small desktops */
+@media (max-width: 1200px) {
+  .container { padding: 0 2rem; }
+  .hero h1 { font-size: 6rem; }
+}
+
+/* Tablets (Portrait & Landscape) */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 5rem; }
+  
+  /* Layout adjustments */
+  .program-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .hero-footer-grid { grid-template-columns: 1fr; }
+  .hero-footer-item { 
+    border-right: none; 
+    border-bottom: 1px solid var(--color-line); 
+    padding: 2.5rem 2rem; 
+  }
+  
+  .inspire-content h2 { font-size: 3.5rem; }
+  .vertical-indicators { right: 1rem; transform: scale(0.8) translateY(-60%); }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  /* Navigation */
+  nav { padding: 1rem 0; background: rgba(18, 20, 23, 0.95); backdrop-filter: blur(10px); position: fixed; border-bottom: 1px solid var(--color-line); }
+  .nav-links { display: none; }
+  .container { padding: 0 1.5rem; }
+  
+  /* Hero */
+  .hero { 
+    height: auto; 
+    min-height: 100vh; 
+    padding-top: 150px; 
+    padding-bottom: 50px; 
+    align-items: flex-start;
+  }
+  .hero h1 { font-size: 4rem; line-height: 1; margin-bottom: 1.5rem; }
+  .hero p { font-size: 0.9rem; }
+  .vertical-indicators { display: none; }
+  
+  /* Hero Footer overrides */
+  .hero-footer { position: static; border-top: none; margin-top: 3rem; }
+  .hero-footer-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .hero-footer-item { 
+    background: var(--color-bg-light); 
+    border: 1px solid var(--color-line); 
+    border-radius: 12px; 
+    padding: 2rem; 
+  }
+
+  /* Programs */
+  #popular { padding-top: 5rem; }
+  .program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .program-card { aspect-ratio: 4/3; border-radius: 12px; }
+
+  /* Schedule */
+  #schedule { padding: 50px 0; }
+  #schedule .container > div > div { padding: 1.5rem; border-left-width: 4px; margin-bottom: 1.5rem; }
+  #schedule h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+  /* Inspire */
+  .inspire-section { padding: 6rem 0; margin-top: 3rem; }
+  .inspire-content h2 { font-size: 2.5rem; }
+
+  /* Gallery */
+  .bottom-gallery { flex-direction: column; margin-top: 3rem; gap: 1rem; }
+  .bottom-gallery-item { border-radius: 8px; }
+  
+  /* Footer */
+  footer { padding: 3rem 0; margin-top: 3rem; }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 3.2rem; }
+  .section-intro h2 { font-size: 1.6rem; }
+  .hero-footer-item { padding: 1.5rem; }
+}
