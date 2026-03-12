@@ -127,6 +127,14 @@ nav {
   margin-bottom: 2rem;
 }
 
+.sponsorship-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-sub);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
 .vertical-indicators {
   position: absolute;
   right: 4rem;
