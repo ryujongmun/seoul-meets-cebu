@@ -103,7 +103,7 @@ nav {
 .hero {
   height: 100vh;
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('hero_new.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('hero_seoul.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
 }
@@ -291,7 +291,7 @@ nav {
 .inspire-section {
   padding: 15rem 0;
   margin-top: 10rem;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('inspire_bg.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('inspire_bg_new.png') no-repeat center center/cover;
 }
 
 .inspire-content {
