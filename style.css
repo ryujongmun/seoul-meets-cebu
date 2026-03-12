@@ -115,6 +115,36 @@ nav {
   color: #fff;
 }
 
+/* Language Switcher Styling */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 1rem;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.lang-switch a {
+  color: rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+}
+
+.lang-switch a.active {
+  color: #fff !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.lang-switch a:hover {
+  color: #fff;
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
